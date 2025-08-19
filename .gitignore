@@ -1,9 +1,13 @@
-# Terraform
+**/.terraform/*
+
+# Terraform state files
 *.tfstate
 *.tfstate.*
-.terraform/
-crash.log
-override.tf
+
+# Terraform lock file
+.terraform.lock.hcl
+# documents
+*.doc
 
 # Node / Python
 node_modules/
