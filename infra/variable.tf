@@ -13,7 +13,7 @@ variable "rds-username" {
 variable "ami" {
     description = "ami"
     type = string
-    default = "ami-0144277607031eca2"
+    default = "ami-0861f4e788f5069dd"
   
 }
 variable "instance-type" {
