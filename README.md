@@ -37,8 +37,3 @@ Both the **frontend** and **backend** were pre-baked into custom **AMIs**, and t
 
 ---
 
-## 🚀 Deployment
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/simonxox/fullstackusingterraform.git
-   cd fullstackusingterraform
