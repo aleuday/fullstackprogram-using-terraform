@@ -5,13 +5,13 @@ on:
     branches:
       - main
     paths:
-      - 'day-3 all config/**'   # Only trigger if PR touches this folder
+      - 'infra/**'   # Only trigger if PR touches this folder
 
   push:
     branches:
       - main
     paths:
-      - 'day-3 all config/**'   # Only trigger if push modifies this folder
+      - 'infra/**'   # Only trigger if push modifies this folder
 
   workflow_dispatch:
     inputs:
@@ -24,7 +24,7 @@ on:
           - destroy
 
 env:
-  TF_DIR: ./day-3 all config
+  TF_DIR: ./infra
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -36,24 +36,24 @@ jobs:
         working-directory: ${{ env.TF_DIR }}
 
     steps:
-      - name: í³¥ Checkout code
+      - name: ðŸ“¥ Checkout code
         uses: actions/checkout@v3
 
-      - name: í´§ Setup Terraform
+      - name: ðŸ”§ Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.6
 
-      - name: í·ª Terraform Init
+      - name: ðŸ§ª Terraform Init
         run: terraform init
 
-      - name: í³‹ Terraform Plan
+      - name: ðŸ“‹ Terraform Plan
         run: terraform plan
 
-      - name: íº€ Terraform Apply (on push to main)
+      - name: ðŸš€ Terraform Apply (on push to main)
         if: github.event_name == 'push'
         run: terraform apply -auto-approve
 
-      - name: í²£ Terraform Destroy (manual only)
+      - name: ðŸ’£ Terraform Destroy (manual only)
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'destroy'
         run: terraform destroy -auto-approve
