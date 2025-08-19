@@ -17,7 +17,7 @@ resource "aws_db_instance" "rds" {
 
   
   tags = {
-    DB_identifier = "simondbclear"
+    DB_identifier = "simondbclearr"
   }
 }
 
