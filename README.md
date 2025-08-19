@@ -6,7 +6,7 @@ Both the **frontend** and **backend** were pre-baked into custom **AMIs**, and t
 ---
 
 ## 👤 Author
-**Kamatham Simon Daniel**  
+**Simon** 
 
 ---
 
