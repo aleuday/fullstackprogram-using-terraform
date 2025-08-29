@@ -25,7 +25,7 @@ variable "instance-type" {
 variable "key-name" {
     description = "fun"
     type = string
-    default = "fun"
+    default = "pop"
   
 }
 variable "backupr-retention" {
